@@ -307,7 +307,7 @@ runs:
 
         for patch_file in ../../../my_patches/kernel_patches/op11/msm/*.patch; do
             echo "Applying patch: $patch_file"
-            patch -p1 < "$patch_file"
+            patch -p1 --fuzz=3 < "$patch_file"
         done
 
     - name: Add memkernel module
